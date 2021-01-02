@@ -1,0 +1,21 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+}
+
+mainClassName = 'com.ch8n.morse.MainKt'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "com.github.ajalt.clikt:clikt:3.1.0"
+    implementation "com.github.ajalt:mordant:1.2.1"
+    implementation "com.jakewharton.picnic:picnic:0.5.0"
+
+}
