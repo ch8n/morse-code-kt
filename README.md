@@ -6,7 +6,11 @@
 # Morse Code Cli
 
 Script that can encode a given message to Morse-Code or decode a given morse-code to message
----
+
+### Preview
+ 
+![script-demo](./sample-morse.gif)
+
 ## :gear: How to Build
 
 1. Run command
