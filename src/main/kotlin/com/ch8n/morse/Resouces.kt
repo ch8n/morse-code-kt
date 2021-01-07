@@ -6,6 +6,10 @@ import com.jakewharton.picnic.table
 object Res {
     private val STYLE = TermColors()
 
+    fun stylize(style: (TermColors) -> String): String {
+        return style.invoke(STYLE)
+    }
+
     object DimenRes {
         const val pad_2 = 2
     }
@@ -34,6 +38,8 @@ object Res {
                 STYLE.brightBlue(" ${index + 1}) ${option.label}")
             }
         }
+        val enterUserMessageTitle by lazy { "Enter Your ${STYLE.brightGreen("Message")}:" }
+        val enterUserMorseTitle by lazy { "Enter Your ${STYLE.brightGreen("Morse Code")}:" }
 
     }
 

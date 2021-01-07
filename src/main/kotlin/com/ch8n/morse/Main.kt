@@ -5,6 +5,7 @@ import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.prompt
 import com.github.ajalt.mordant.TermColors
+import com.yg.kotlin.inquirer.components.promptInput
 import com.yg.kotlin.inquirer.components.promptList
 import com.yg.kotlin.inquirer.core.KInquirer
 
@@ -39,38 +40,32 @@ class App(private val args: Array<String>) : CliktCommand() {
 
 
 class MorseEncoder : CliktCommand() {
-
-    private val inputMessageText = with(TermColors()) {
-        "Enter Your ${brightGreen("Message")}"
-    }
-
-    private val message: String by option(help = "String to encode")
-        .prompt(inputMessageText)
-
     override fun run() {
-        echo(message.toMorse())
+        val message: String = KInquirer.promptInput(
+            Res.StyledRes.enterUserMessageTitle
+        )
+        val morse = Res.stylize { it.bold(message.toMorse()) }
+        echo(morse)
     }
 }
 
 class MorseDecoder : CliktCommand() {
 
-    private val inputMorseText = with(TermColors()) {
-        "Enter ${brightGreen("Morse code")}"
-    }
-
-    private val message: String by option(help = "String to decode")
-        .prompt(inputMorseText)
-
     override fun run() {
-        echo(message.decodeMorse())
+
+        val morse: String = KInquirer.promptInput(
+            Res.StyledRes.enterUserMorseTitle
+        )
+        val message = Res.stylize { it.bold(morse.decodeMorse()) }
+        echo(message)
     }
 }
 
 
 fun String.toMorse(): String {
     val morseMapper = morseCodeConverter
-    val sentense = this
-    val words = sentense.split(" ")
+    val sentence = this
+    val words = sentence.split(" ")
     val morse = words
         .map { word ->
             return@map word
