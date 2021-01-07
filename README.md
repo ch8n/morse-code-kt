@@ -1,12 +1,13 @@
-<h1 align="center"><a href="https://chetangupta.net/bbk-main" target="_blank">BigBrainKotlin</a>
+<h1 align="center"><a href="https://chetangupta.net/bbk-main" target="_blank">Big-Brain-Kotlin</a>
 </h1>
 
 ![Big-Brain-Kotlin](./bigBrain.jpg)
 
 # Morse Code Cli
+
 Script that can encode a given message to Morse-Code or decode a given morse-code to message
 ---
-# How to Build
+## :gear: How to Build
 
 1. Run command
 ```gradle
@@ -17,15 +18,14 @@ Script that can encode a given message to Morse-Code or decode a given morse-cod
 // In terminal run command
 ./morse-code-cli-kt
 ```
-
-
-# Framework 
+---
+## :wrench: Framework 
 * CliKt for Scaffold
 * Mordant for Colored Output
 * Picnic for Tables 
 * Inquirer for Argument parsing and Interactive Options
 
-
+---
 ## :cop: License
 ```
    Copyright [2020] [Chetan gupta] [chetangupta.net]
