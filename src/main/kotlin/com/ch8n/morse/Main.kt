@@ -5,53 +5,33 @@ import com.github.ajalt.clikt.core.NoOpCliktCommand
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.prompt
 import com.github.ajalt.mordant.TermColors
-import com.jakewharton.picnic.table
+import com.yg.kotlin.inquirer.components.promptList
+import com.yg.kotlin.inquirer.core.KInquirer
 
 fun main(args: Array<String>) {
-    Splash().main(args)
+    PromptMorseOption().main(args)
     App(args).main(args)
 }
 
-class Splash : NoOpCliktCommand() {
+
+class PromptMorseOption : NoOpCliktCommand() {
     override fun run() {
         super.run()
-
-        val c = TermColors()
-
-        val result = table {
-            cellStyle {
-                border = true
-                paddingLeft = 2
-                paddingRight = 2
-            }
-            row(c.bold(c.yellow("Big-Brain-Kotlin: Morse Code")))
-            row(
-                """
-            ${c.bold("Options:")}
-            ${c.gray("1) Encode")}
-            ${c.gray("2) Decode")}
-            """.trimIndent()
-            )
-        }
-
-        echo(result)
-
+        echo(Res.View.morseOptions)
     }
 }
 
 class App(private val args: Array<String>) : CliktCommand() {
 
-    private val inputChoiceText = with(TermColors()) { "Enter option ${brightBlue("1")} or ${brightBlue("2")}" }
-
-    private val choice: String by option()
-        .prompt(inputChoiceText)
-
     override fun run() {
+        val choice: Options = KInquirer.promptList(
+            Res.StyledRes.selectTitle, Res.StyledRes.selectOption
+        ).toOption()
 
         when (choice) {
-            "1" -> MorseEncoder().main(args)
-            "2" -> MorseDecoder().main(args)
-            else -> echo("Invalid option")
+            Options.ERROR -> echo("Invalid option")
+            Options.ENCODE -> MorseEncoder().main(args)
+            Options.DECODE -> MorseDecoder().main(args)
         }
     }
 

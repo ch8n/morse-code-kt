@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\morse-code-cli-kt-1.0-SNAPSHOT.jar;%APP_HOME%\lib\mordant-1.2.1.jar;%APP_HOME%\lib\colormath-1.2.0.jar;%APP_HOME%\lib\clikt-jvm-3.1.0.jar;%APP_HOME%\lib\kotlin-stdlib-jdk8-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-jdk7-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-common-1.4.21.jar;%APP_HOME%\lib\annotations-13.0.jar
+set CLASSPATH=%APP_HOME%\lib\morse-code-cli-kt-1.0-SNAPSHOT.jar;%APP_HOME%\lib\mordant-1.2.1.jar;%APP_HOME%\lib\colormath-1.2.0.jar;%APP_HOME%\lib\picnic-0.5.0.jar;%APP_HOME%\lib\kotlin-inquirer-v0.0.2-alpha.jar;%APP_HOME%\lib\clikt-jvm-3.1.0.jar;%APP_HOME%\lib\kotlin-stdlib-jdk8-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-jdk7-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-1.4.21.jar;%APP_HOME%\lib\kotlin-stdlib-common-1.4.21.jar;%APP_HOME%\lib\annotations-13.0.jar;%APP_HOME%\lib\jline-3.12.1.jar
 
 @rem Execute morse-code-cli-kt
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %MORSE_CODE_CLI_KT_OPTS%  -classpath "%CLASSPATH%" com.ch8n.morse.MainKt %CMD_LINE_ARGS%

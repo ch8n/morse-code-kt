@@ -80,7 +80,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/morse-code-cli-kt-1.0-SNAPSHOT.jar:$APP_HOME/lib/mordant-1.2.1.jar:$APP_HOME/lib/colormath-1.2.0.jar:$APP_HOME/lib/clikt-jvm-3.1.0.jar:$APP_HOME/lib/kotlin-stdlib-jdk8-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-jdk7-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-common-1.4.21.jar:$APP_HOME/lib/annotations-13.0.jar
+CLASSPATH=$APP_HOME/lib/morse-code-cli-kt-1.0-SNAPSHOT.jar:$APP_HOME/lib/mordant-1.2.1.jar:$APP_HOME/lib/colormath-1.2.0.jar:$APP_HOME/lib/picnic-0.5.0.jar:$APP_HOME/lib/kotlin-inquirer-v0.0.2-alpha.jar:$APP_HOME/lib/clikt-jvm-3.1.0.jar:$APP_HOME/lib/kotlin-stdlib-jdk8-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-jdk7-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-1.4.21.jar:$APP_HOME/lib/kotlin-stdlib-common-1.4.21.jar:$APP_HOME/lib/annotations-13.0.jar:$APP_HOME/lib/jline-3.12.1.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
