@@ -1,15 +1,44 @@
-# morse-code-kt
+<h1 align="center"><a href="https://chetangupta.net/bbk-main" target="_blank">BigBrainKotlin</a>
+</h1>
+
+![Big-Brain-Kotlin](./bigBrain.jpg)
+
+# Morse Code Cli
 Script that can encode a given message to Morse-Code or decode a given morse-code to message
-
 ---
-#Introduction
-Create Interactive CLI app with Kotlin
-I will demonstrate building a simple command line application using Kotlin 
+# How to Build
 
-So I have been inspired by this guy theapache aka shrief, he has been building lots of great tools using bash scripts, looking the things he he building also gives me peter tingle to develop things of my own, but sadly I’m not bash master, so I decided to learn it and automate some of my stuff, but looking  youtube and learning from docs specially something other than Kotlin, I feel is a waste of my brain juice #fanBOY , and I don’t know Hardest part for me is not the code but the setting of developement enviorment and dependencies. After bit of zoozling I figure got to know  Kotlin has scripting support too 🤩 and I got excited to dig in… but `Khoda pahad nikla chua` #disappointment… apparently you can make scripts with Kts extensions and needs kotlinc command to run these scripts and I didn’t know how to export them into bash file and package it’s dependencies. 
+1. Run command
+```gradle
+    ./gradlew installDist
+```
+2. Navigate to build/install/bin
+```
+// In terminal run command
+./morse-code-cli-kt
+```
 
-Reading docs figure that KEEP has proposal for Scripting support but haven’t yet made progress with it proposal docs here. So since first party support was out I looking up medium for 3rd party framework that could help me do that. I ended up with KScript and some KotlinConf talks on it. 
 
-It is a whole some framework for scripting but.. I wasn’t able to grasp it. It required me to install Kscript
+# Framework 
+* CliKt for Scaffold
+* Mordant for Colored Output
+* Picnic for Tables 
+* Inquirer for Argument parsing and Interactive Options
 
 
+## :cop: License
+```
+   Copyright [2020] [Chetan gupta] [chetangupta.net]
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+ ```
