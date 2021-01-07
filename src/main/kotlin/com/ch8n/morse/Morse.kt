@@ -55,3 +55,26 @@ val morseCodeConverter: Map<String, String>
         get() {
                 return morseCodeTranslator.entries.associate { (key, value) -> value.toLowerCase() to key }
         }
+
+fun String.toMorse(): String {
+        val morseMapper = morseCodeConverter
+        val sentence = this
+        val words = sentence.split(" ")
+        val morse = words
+                .map { word ->
+                        return@map word
+                                .toCharArray()
+                                .map { alpha -> morseMapper.get(alpha.toString()) }
+                                .joinToString(separator = " ")
+                }.joinToString(separator = "   ")
+        return morse
+}
+
+
+fun String.decodeMorse(): String {
+        return this
+                .replace("  ", " ")
+                .split(" ")
+                .map { morseCodeTranslator[it] }
+                .joinToString("")
+}
