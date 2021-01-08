@@ -2,27 +2,43 @@ package com.ch8n.morse
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.NoOpCliktCommand
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.prompt
-import com.github.ajalt.mordant.TermColors
 import com.yg.kotlin.inquirer.components.promptConfirm
 import com.yg.kotlin.inquirer.components.promptInput
 import com.yg.kotlin.inquirer.components.promptList
 import com.yg.kotlin.inquirer.core.KInquirer
 
+/***
+ * Author : Chetan Gupta
+ * Website : Chetangupta.net
+ * Series : BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * Convert a given message to Morse Code or A given morse code to String message
+ * License : This work is licensed under a Creative Commons International License
+ */
+
+
+/**
+ * Entry Point of the Application
+ */
 fun main(args: Array<String>) {
     PromptMorseOption().main(args)
     App(args).main(args)
 }
 
-
+/**
+ * Prints the table of Menu Options
+ */
 class PromptMorseOption : NoOpCliktCommand() {
     override fun run() {
         super.run()
-        echo(Res.View.morseOptions)
+        echo(Res.View.morseOptionsTable)
     }
 }
 
+
+/**
+ * Controller that Ask user for choice prompts from the given options,
+ * and repeat functionality again on end.
+ */
 class App(private val args: Array<String>) : CliktCommand() {
 
     override fun run() {
@@ -45,26 +61,31 @@ class App(private val args: Array<String>) : CliktCommand() {
 
 }
 
-
+/**
+ * Controller that takes input in English and convert it to morse code
+ */
 class MorseEncoder : CliktCommand() {
     override fun run() {
         val message: String = KInquirer.promptInput(
             Res.StyledRes.enterUserMessageTitle
         )
         val morse = Res.stylize { it.bold(message.toMorse()) }
-        echo(Res.View.outputTable(morse))
+        echo(Res.View.displayResultTable(morse))
     }
 }
 
+
+/**
+ * Controller that takes input in Morse and convert it to English
+ */
 class MorseDecoder : CliktCommand() {
 
     override fun run() {
-
         val morse: String = KInquirer.promptInput(
             Res.StyledRes.enterUserMorseTitle
         )
         val message = Res.stylize { it.bold(morse.decodeMorse()) }
-        echo(Res.View.outputTable(message))
+        echo(Res.View.displayResultTable(message))
     }
 }
 

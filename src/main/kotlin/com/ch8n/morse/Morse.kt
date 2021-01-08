@@ -1,5 +1,18 @@
 package com.ch8n.morse
 
+/***
+ * Author : Chetan Gupta
+ * Website : Chetangupta.net
+ * Series : BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * Convert a given message to Morse Code or A given morse code to String message
+ * License : This work is licensed under a Creative Commons International License
+ */
+
+
+/**
+ * Checkout BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * map of all supported characters morse character
+ */
 val morseCodeTranslator = mapOf<String, String>(
         ".-" to "A",
         "-..." to "B",
@@ -51,11 +64,19 @@ val morseCodeTranslator = mapOf<String, String>(
         "-...-" to "="
 )
 
+/**
+ * Checkout BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * map of supported english characters
+ */
 val morseCodeConverter: Map<String, String>
         get() {
                 return morseCodeTranslator.entries.associate { (key, value) -> value.toLowerCase() to key }
         }
 
+/**
+ * Checkout BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * convert string to Morse
+ */
 fun String.toMorse(): String {
         val morseMapper = morseCodeConverter
         val sentence = this
@@ -70,7 +91,10 @@ fun String.toMorse(): String {
         return morse
 }
 
-
+/**
+ * Checkout BigBrainKotlin - BBK-6 : https://chetangupta.net/bbk6/
+ * convert morse to english
+ */
 fun String.decodeMorse(): String {
         return this
                 .replace("  ", " ")
