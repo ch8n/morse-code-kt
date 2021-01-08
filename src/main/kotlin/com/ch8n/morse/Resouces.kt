@@ -11,7 +11,6 @@ object Res {
         return style.invoke(STYLE)
     }
 
-
     object DimenRes {
         const val pad_2 = 2
     }
@@ -31,11 +30,13 @@ object Res {
 
     object StyledRes {
         val optionTitle by lazy { STYLE.bold(STYLE.white(StringRes.options_title)) }
+
         val options by lazy {
             StringRes.Spanners.options.mapIndexed { index, option ->
                 STYLE.gray(" ${index + 1}) ${option.label}")
             }
         }
+
         val selectTitle by lazy { STYLE.bold(STYLE.white(StringRes.select_title)) }
 
         val selectOption by lazy {
@@ -43,10 +44,15 @@ object Res {
                 STYLE.brightBlue(" ${index + 1}) ${option.label}")
             }
         }
+
         val enterUserMessageTitle by lazy { "Enter Your ${STYLE.brightGreen("Message")}:" }
+
         val enterUserMorseTitle by lazy { "Enter Your ${STYLE.brightGreen("Morse Code")}:" }
+
         val tryAgainTitle by lazy { STYLE.bold(STYLE.white(StringRes.try_again_title)) }
+
         val yesMessage by lazy { STYLE.bold(STYLE.brightBlue(StringRes.yes)) }
+
         val noMessage by lazy { STYLE.bold(STYLE.brightRed(StringRes.no)) }
     }
 
